@@ -40,7 +40,7 @@ func TemplateWithFuncMap(opts Options, funcMap textTemplate.FuncMap, data interf
 	}
 	defer wDeferFunc()
 
-	err = TemplateReaderWriter(r, w, data)
+	err = TemplateReaderWriterNamedWithFuncMap(opts.TemplateFilename, r, w, funcMap, data)
 	return err
 }
 
@@ -61,7 +61,7 @@ func HTMLTemplateWithFuncMap(opts Options, funcMap htmlTemplate.FuncMap, data in
 	}
 	defer wDeferFunc()
 
-	err = HTMLTemplateReaderWriter(r, w, data)
+	err = HTMLTemplateReaderWriterNamedWithFuncMap(opts.TemplateFilename, r, w, funcMap, data)
 	return err
 }
 
