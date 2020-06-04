@@ -10,7 +10,7 @@ import (
 	"github.com/spf13/afero"
 )
 
-// FilesystemBackend allows to specifiy another filesystem backend, default is the one from the os package
+// FilesystemBackend allows to specify another filesystem backend, default is the one from the os package
 var FilesystemBackend = afero.NewOsFs()
 
 type Options struct {
