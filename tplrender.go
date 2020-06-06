@@ -83,7 +83,7 @@ func getWriter(opts Options) (io.Writer, func(), error) {
 	// ensure output dir
 	if !opts.NoCreateOutputDir {
 		if _, err := FilesystemBackend.Stat(opts.OutputDir); os.IsNotExist(err) {
-			FilesystemBackend.MkdirAll(filepath.Dir(opts.OutputFilename), 0750)
+			FilesystemBackend.MkdirAll(opts.OutputDir, 0750)
 		}
 	}
 
